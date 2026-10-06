@@ -1,9 +1,9 @@
 // Nomor WhatsApp ADK Corp (format internasional, tanpa +)
 const NOMOR_WA = "628112637786";
 
-// Konversi "Contact" di Google Ads. Label diisi dari event snippet Google Ads (bagian setelah garis miring
-// pada send_to). Selama masih kosong, klik WhatsApp belum dikirim sebagai konversi.
-const KONVERSI_KONTAK = "AW-18494142619/";
+// Konversi "Contact" di Google Ads (send_to dari event snippet goal Contact). Setiap klik tombol WhatsApp
+// dihitung satu konversi.
+const KONVERSI_KONTAK = "AW-18494142619/TaSgCJmqpJMdEJvx2PJE";
 
 // Setiap tautan bertanda data-wa dibuka ke WhatsApp dengan pesan pembuka yang sudah terisi
 document.querySelectorAll("[data-wa]").forEach((a) => {
@@ -11,8 +11,8 @@ document.querySelectorAll("[data-wa]").forEach((a) => {
   a.target = "_blank";
   a.rel = "noopener";
   a.addEventListener("click", () => {
-    if (typeof gtag === "function" && !KONVERSI_KONTAK.endsWith("/")) {
-      gtag("event", "conversion", { send_to: KONVERSI_KONTAK });
+    if (typeof gtag === "function") {
+      gtag("event", "conversion", { send_to: KONVERSI_KONTAK, value: 1.0, currency: "IDR" });
     }
   });
 });
