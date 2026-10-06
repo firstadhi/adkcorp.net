@@ -51,3 +51,16 @@ document.querySelectorAll("[data-kuota]").forEach((el) => {
   el.querySelector(".kuota-teks").textContent = `Sisa ${sisa} dari ${KUOTA_PROMO} klien`;
   el.querySelector(".kuota-isi").style.width = `${(sisa / KUOTA_PROMO) * 100}%`;
 });
+
+// Tombol kembali ke atas: tampil setelah pengunjung menggulir lebih dari satu setengah layar
+const keAtas = document.querySelector(".ke-atas");
+if (keAtas) {
+  keAtas.hidden = false;
+  const cek = () => keAtas.classList.toggle("tampil", window.scrollY > window.innerHeight * 1.5);
+  window.addEventListener("scroll", cek, { passive: true });
+  cek();
+  keAtas.addEventListener("click", () => {
+    const halus = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: halus ? "smooth" : "auto" });
+  });
+}

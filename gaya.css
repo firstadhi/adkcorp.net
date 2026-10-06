@@ -289,6 +289,21 @@ details p { margin: 0; padding: 0 22px 20px; color: var(--tinta-2); }
 }
 .wa-melayang:hover { transform: scale(1.06); }
 
+/* tombol kembali ke atas: muncul setelah halaman digulir jauh, di atas tombol WhatsApp */
+.ke-atas {
+  position: fixed; right: 24px; bottom: 90px; z-index: 30;
+  width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--tinta); color: #fff; border: 1px solid rgba(255, 255, 255, .14); cursor: pointer;
+  box-shadow: 0 10px 26px -8px rgba(0, 0, 0, .45);
+  opacity: 0; transform: translateY(12px) scale(.9); pointer-events: none;
+  transition: opacity .25s, transform .25s, background .15s;
+}
+.ke-atas[hidden] { display: none; }
+.ke-atas.tampil { opacity: 1; transform: none; pointer-events: auto; }
+.ke-atas:hover { background: var(--api); }
+.ke-atas:hover svg { transform: translateY(-2px); }
+.ke-atas svg { transition: transform .15s; }
+
 /* ---------- layar kecil ---------- */
 @media (max-width: 960px) {
   .menu { display: none; }
