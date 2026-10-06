@@ -272,7 +272,10 @@ details p { margin: 0; padding: 0 22px 20px; color: var(--tinta-2); }
 .ajakan .tombol:hover { background: #000; border-color: #000; }
 
 .bawah { background: var(--gelap); color: #c9ccd4; padding: 48px 0 96px; font-size: 15px; }
-.bawah-isi { display: grid; grid-template-columns: auto 1fr auto auto; gap: 32px; align-items: center; }
+.bawah-isi { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: end; }
+.bawah-merek p { margin-top: 14px; }
+.bawah-judul { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #7d8392; margin-bottom: 12px !important; }
+.bawah-kaki { border-top: 1px solid rgba(255, 255, 255, .08); margin-top: 36px; padding-top: 20px; }
 .bawah .merek-teks { color: #fff; }
 .bawah p { margin: 0; }
 .bawah a { color: #fff; }
@@ -304,7 +307,7 @@ details p { margin: 0; padding: 0 22px 20px; color: var(--tinta-2); }
   .layar-lebar { grid-column: 1 / -1; }
   .fakta-aplikasi { grid-template-columns: 1fr 1fr; }
   .langkah { grid-template-columns: 1fr 1fr; }
-  .bawah-isi { grid-template-columns: 1fr; gap: 14px; }
+  .bawah-isi { grid-template-columns: 1fr; gap: 28px; align-items: start; }
 }
 @media (max-width: 600px) {
   body { font-size: 16px; }
@@ -375,6 +378,30 @@ td .harga-normal { font-size: 13px; font-weight: 500; }
 @media (max-width: 960px) { .tentang-isi { grid-template-columns: 1fr; gap: 24px; } }
 @media (max-width: 600px) { .janji { grid-template-columns: 1fr; } .tentang-teks p { font-size: 16px; } }
 
-.ajakan .ajakan-email { font-size: 16px; margin: 18px 0 0; }
-.ajakan-email a { color: #fff; font-weight: 700; }
-.ajakan-email + .ajakan-email { margin-top: 8px; }
+/* ---------- kartu kontak & media sosial ---------- */
+.sosmed-baris { display: flex; flex-wrap: wrap; gap: 12px; }
+.sosmed {
+  display: inline-flex; align-items: center; gap: 12px; padding: 9px 20px 9px 9px;
+  border-radius: 16px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .1);
+  color: #fff; text-decoration: none; transition: transform .18s, background .18s, border-color .18s;
+}
+.sosmed:hover { transform: translateY(-2px); background: rgba(255, 255, 255, .11); border-color: rgba(255, 255, 255, .22); }
+.sosmed-ikon {
+  width: 42px; height: 42px; border-radius: 12px; flex-shrink: 0;
+  display: grid; place-items: center; color: #fff; transition: transform .18s;
+}
+.sosmed:hover .sosmed-ikon { transform: rotate(-6deg) scale(1.06); }
+.sosmed-wa .sosmed-ikon { background: #25d366; }
+.sosmed-ig .sosmed-ikon { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }
+.sosmed-mail .sosmed-ikon { background: var(--api); }
+.sosmed-teks { display: flex; flex-direction: column; text-align: left; line-height: 1.25; font-weight: 700; font-size: 15px; }
+.sosmed-teks small { font-weight: 500; font-size: 12px; color: #9aa0ad; letter-spacing: .02em; }
+.ajakan .sosmed-baris { justify-content: center; margin-top: 22px; }
+.ajakan .sosmed { background: rgba(255, 255, 255, .16); border-color: rgba(255, 255, 255, .3); }
+.ajakan .sosmed:hover { background: rgba(255, 255, 255, .26); border-color: rgba(255, 255, 255, .5); }
+.ajakan .sosmed-teks small { color: rgba(255, 255, 255, .82); }
+.ajakan .sosmed-mail .sosmed-ikon { background: var(--tinta); }
+@media (max-width: 600px) {
+  .sosmed-baris { flex-direction: column; align-items: stretch; }
+  .ajakan .sosmed-baris { width: 100%; max-width: 360px; }
+}
