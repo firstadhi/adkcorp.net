@@ -377,3 +377,4 @@ td .harga-normal { font-size: 13px; font-weight: 500; }
 
 .ajakan .ajakan-email { font-size: 16px; margin: 18px 0 0; }
 .ajakan-email a { color: #fff; font-weight: 700; }
+.ajakan-email + .ajakan-email { margin-top: 8px; }
