@@ -420,3 +420,89 @@ td .harga-normal { font-size: 13px; font-weight: 500; }
   .sosmed-baris { flex-direction: column; align-items: stretch; }
   .ajakan .sosmed-baris { width: 100%; max-width: 360px; }
 }
+
+/* ---------- mitra (logo klien) ---------- */
+.mitra { padding: 8px 0 72px; }
+.mitra .label { text-align: center; margin-bottom: 22px; color: var(--abu); }
+.mitra-baris {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+}
+.mitra-kartu {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  height: 92px; padding: 16px 20px; border-radius: 16px;
+  background: var(--putih); border: 1px solid var(--garis);
+}
+.mitra-kartu img { max-width: 100%; max-height: 52px; width: auto; height: auto; object-fit: contain; }
+.mitra-gelap { background: #0d0d12; border-color: #0d0d12; }
+.mitra-gelap img { max-height: 34px; }
+.mitra-rt img { width: 44px; height: 44px; }
+.mitra-rt span { font-family: var(--huruf-judul); font-weight: 800; font-size: 17px; line-height: 1.1; color: #15803d; }
+.mitra-rt small { display: block; font-family: var(--huruf); font-weight: 600; font-size: 12px; color: var(--tinta-2); }
+
+/* ---------- penanda status proyek ---------- */
+.status-baris { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; }
+.status {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 999px;
+}
+.status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.status-tayang { background: #dcf3e4; color: #1c7a45; }
+.status-uji { background: #e2ecfb; color: #2a5db0; }
+.status-proses { background: #ffe9df; color: var(--api-tua); }
+.status-desain { background: #ecebe7; color: #5b5f6b; }
+.bagian-gelap .status-tayang { background: rgba(80, 200, 130, .16); color: #7fdca4; }
+.bagian-gelap .status-proses { background: rgba(255, 106, 61, .16); color: #ff9b7a; }
+
+/* ---------- Taxwise fase 2 ---------- */
+.judul-fase { margin-top: 56px; }
+.ket-fase { margin: -6px 0 18px; color: #c9ccd4; max-width: 62ch; font-size: 15px; }
+.galeri-fase2 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-items: start; }
+.galeri-fase2 img { width: 100%; border-radius: 12px; object-fit: cover; aspect-ratio: 4 / 5; }
+.galeri-fase2 img.sampul { aspect-ratio: 9 / 16; }
+
+/* ---------- karya website & aplikasi ---------- */
+.judul-bagian-karya { margin-bottom: 40px; }
+.judul-proyek { font-size: clamp(28px, 3.4vw, 40px); font-weight: 800; }
+.proyek-baris { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 64px; }
+.proyek {
+  display: flex; flex-direction: column; background: var(--putih);
+  border: 1px solid var(--garis); border-radius: var(--radius); overflow: hidden;
+}
+.proyek-layar {
+  height: 300px; overflow: hidden; background: var(--krem);
+  display: flex; justify-content: center; padding: 22px 22px 0;
+}
+.proyek-layar img {
+  width: 62%; height: auto; align-self: flex-start;
+  border-radius: 18px 18px 0 0; box-shadow: var(--bayang);
+}
+.proyek-layar-lebar { padding: 22px 0 0 22px; justify-content: flex-start; }
+.proyek-layar-lebar img { width: 150%; max-width: none; border-radius: 12px 0 0 0; }
+.proyek-isi { padding: 22px 24px 26px; display: flex; flex-direction: column; flex: 1; }
+.proyek-isi .status-baris { margin: 0 0 12px; }
+.proyek-isi h3 { font-size: 24px; }
+.proyek-isi .sub { margin: 6px 0 12px; font-size: 14px; }
+.proyek-isi > p:not(.sub):not(.status-baris):not(.data-contoh) { margin: 0 0 16px; color: var(--tinta-2); font-size: 15px; }
+.proyek-fakta { list-style: none; padding: 0; margin: auto 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.proyek-fakta li { font-size: 13px; font-weight: 600; background: var(--hijau-muda); color: var(--hijau); padding: 5px 10px; border-radius: 999px; }
+.tautan-proyek { margin-top: 16px; font-weight: 700; color: var(--hijau); text-decoration: none; }
+.tautan-proyek:hover { text-decoration: underline; }
+.proyek .data-contoh { margin-top: 12px; }
+
+@media (max-width: 960px) {
+  .mitra-baris { grid-template-columns: repeat(3, 1fr); }
+  .proyek-baris { grid-template-columns: 1fr; max-width: 560px; }
+  .galeri-fase2 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .mitra-baris { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .mitra-kartu { height: 76px; padding: 12px 14px; }
+  .mitra-kartu img { max-height: 42px; }
+  .mitra-gelap img { max-height: 26px; }
+  .mitra-kartu:last-child { grid-column: 1 / -1; }
+  .proyek-layar { height: 260px; }
+}
+.mitra-tinggi img { max-height: 68px; }
+@media (max-width: 600px) { .mitra-tinggi img { max-height: 54px; } }
