@@ -465,7 +465,7 @@ td .harga-normal { font-size: 13px; font-weight: 500; }
 /* ---------- karya website & aplikasi ---------- */
 .judul-bagian-karya { margin-bottom: 40px; }
 .judul-proyek { font-size: clamp(28px, 3.4vw, 40px); font-weight: 800; }
-.proyek-baris { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 64px; }
+.proyek-baris { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 64px; }
 .proyek {
   display: flex; flex-direction: column; background: var(--putih);
   border: 1px solid var(--garis); border-radius: var(--radius); overflow: hidden;
