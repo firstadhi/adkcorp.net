@@ -19,11 +19,12 @@
 <meta property="og:url" content="https://adkcorp.net/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://adkcorp.net/aset/karya/feed-es-campur.webp">
+<meta name="theme-color" content="#f3eee4">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2314171f'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='800' font-size='26' fill='%23ff6a3d' text-anchor='middle'%3EADK%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="gaya.css?v=20261016b">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Caveat:wght@600;700&family=DM+Mono:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="gaya.css?v=20261016t">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,7 +51,7 @@
       <a href="#tentang">Tentang</a>
       <a href="#harga">Harga</a>
       <a href="#cara-kerja">Cara kerja</a>
-      <a href="#tanya">Tanya jawab</a>
+      <a href="#tanya">Tanya</a>
     </nav>
     <a class="tombol tombol-kecil" data-wa="Halo ADK Corp, saya mau konsultasi." href="#">WhatsApp</a>
   </div>
@@ -63,104 +64,118 @@
   <div class="wadah pembuka-isi">
     <div class="pembuka-teks">
       <a class="chip-promo" href="#harga"><span class="chip-titik" aria-hidden="true"></span>Promo Klien Perintis · <span data-kuota-sisa>sisa kuota terbatas</span></a>
-      <p class="label">Studio konten &amp; aplikasi · Melayani seluruh Indonesia</p>
-      <h1>Konten yang <em>ditonton</em>.<br>Aplikasi yang <em>dipakai</em>.</h1>
+      <p class="pembuka-label">Studio konten &amp; aplikasi · Melayani seluruh Indonesia</p>
+      <h1>Konten yang <span class="coret">ditonton.</span> Aplikasi yang <span class="kotak-biru">dipakai.</span></h1>
       <p class="pembuka-lead">ADK Corp membuat reel, feed, dan story beranimasi untuk akun bisnis Anda, dan membangun website serta aplikasi yang merapikan cara usaha Anda berjalan. Di kota mana pun usaha Anda, semuanya bisa dikerjakan dari jarak jauh.</p>
       <div class="pembuka-aksi">
         <a class="tombol" data-wa="Halo ADK Corp, saya mau konsultasi gratis." href="#">Konsultasi gratis via WhatsApp</a>
         <a class="tombol tombol-garis" href="#harga">Lihat daftar harga</a>
       </div>
     </div>
-    <div class="pembuka-visual" aria-hidden="true">
-      <img class="kartu-melayang k1" src="aset/karya/feed-es-campur.webp" alt="">
-      <img class="kartu-melayang k2" src="aset/karya/feed-kucing.webp" alt="">
-      <div class="ponsel">
+
+    <!-- papan tempel: stiker & polaroid bisa digeser dengan mouse -->
+    <div class="papan" aria-hidden="true">
+      <div class="ponsel stiker-geser">
         <video src="aset/karya/reel-om-budi.mp4" poster="aset/karya/reel-om-budi.jpg" autoplay muted loop playsinline preload="metadata"></video>
       </div>
+      <figure class="polaroid p1 stiker-geser"><img src="aset/karya/feed-es-campur.webp" alt=""><figcaption>es campur boleh…</figcaption></figure>
+      <figure class="polaroid p2 stiker-geser"><img src="aset/karya/feed-kucing.webp" alt=""><figcaption>si Oyen ✦</figcaption></figure>
+      <span class="stiker-bulat stiker-geser"><small>story mulai</small>Rp 25 rb</span>
+      <span class="stiker-ledak stiker-geser">Tanpa syuting!</span>
+      <span class="tulisan t-reel">reel asli bikinan kami</span>
+      <svg class="panah" viewBox="0 0 120 80" fill="none"><path d="M6 10c30 2 62 14 80 40m0 0-4-18m4 18-18-4" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
   </div>
-  <div class="wadah">
-    <ul class="pita">
-      <li><strong>140 konten</strong><span>dalam 28 hari untuk satu klien</span></li>
-      <li><strong>Tanpa syuting</strong><span>reel animasi teks, grafis &amp; tokoh</span></li>
-      <li><strong>2× revisi</strong><span>sudah termasuk di setiap konten</span></li>
-      <li><strong>5 mitra</strong><span>dari konsultan pajak sampai toko laptop</span></li>
-    </ul>
+
+  <!-- pita selotip berjalan -->
+  <div class="selotip-wadah">
+    <div class="selotip selotip-kuning">
+      <div class="selotip-rel">
+        <p>Reel animasi <i>✺</i> Feed &amp; carousel <i>✺</i> Story interaktif <i>✺</i> Website profil <i>✺</i> Aplikasi bisnis <i>✺</i> Bisa dipasang di HP <i>✺</i></p>
+        <p aria-hidden="true">Reel animasi <i>✺</i> Feed &amp; carousel <i>✺</i> Story interaktif <i>✺</i> Website profil <i>✺</i> Aplikasi bisnis <i>✺</i> Bisa dipasang di HP <i>✺</i></p>
+      </div>
+    </div>
+    <div class="selotip selotip-biru">
+      <div class="selotip-rel selotip-balik">
+        <p>140 konten dalam 28 hari untuk satu klien <i>✦</i> Tanpa syuting <i>✦</i> 2× revisi di setiap konten <i>✦</i> 5 mitra dari konsultan pajak sampai toko laptop <i>✦</i></p>
+        <p aria-hidden="true">140 konten dalam 28 hari untuk satu klien <i>✦</i> Tanpa syuting <i>✦</i> 2× revisi di setiap konten <i>✦</i> 5 mitra dari konsultan pajak sampai toko laptop <i>✦</i></p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ============ MITRA ============ -->
 <section class="mitra" aria-labelledby="judul-mitra">
   <div class="wadah">
-    <p class="label" id="judul-mitra">Mitra Kami</p>
-  </div>
-  <!-- Logo berjalan: daftar kedua hanya salinan visual agar putarannya mulus, disembunyikan dari pembaca layar -->
-  <div class="mitra-jalur">
-    <div class="mitra-rel">
-      <ul class="mitra-baris">
-        <li class="mitra-kartu"><img src="aset/mitra/taxwise.png" alt="Taxwise Consulting" width="571" height="160" loading="lazy"></li>
-        <li class="mitra-kartu"><img src="aset/mitra/aliring.png" alt="Aliring Studio" width="418" height="160" loading="lazy"></li>
-        <li class="mitra-kartu mitra-gelap"><img src="aset/mitra/reload-coms.png" alt="Reload COMS" width="844" height="156" loading="lazy"></li>
-        <li class="mitra-kartu mitra-rt"><img src="aset/mitra/rt11.svg" alt="" width="64" height="64" loading="lazy"><span>RT 11<small>Puri Bintaro Hijau</small></span></li>
-        <li class="mitra-kartu mitra-tinggi"><img src="aset/mitra/adhi-dwi-karya.png" alt="PT. Adhi Dwi Karya" width="348" height="200" loading="lazy"></li>
-      </ul>
-      <ul class="mitra-baris" aria-hidden="true">
-        <li class="mitra-kartu"><img src="aset/mitra/taxwise.png" alt="" width="571" height="160" loading="lazy"></li>
-        <li class="mitra-kartu"><img src="aset/mitra/aliring.png" alt="" width="418" height="160" loading="lazy"></li>
-        <li class="mitra-kartu mitra-gelap"><img src="aset/mitra/reload-coms.png" alt="" width="844" height="156" loading="lazy"></li>
-        <li class="mitra-kartu mitra-rt"><img src="aset/mitra/rt11.svg" alt="" width="64" height="64" loading="lazy"><span>RT 11<small>Puri Bintaro Hijau</small></span></li>
-        <li class="mitra-kartu mitra-tinggi"><img src="aset/mitra/adhi-dwi-karya.png" alt="" width="348" height="200" loading="lazy"></li>
-      </ul>
-    </div>
+    <p class="label label-tengah" id="judul-mitra">Mitra Kami</p>
+    <ul class="mitra-baris">
+      <li class="mitra-kartu"><img src="aset/mitra/taxwise.png" alt="Taxwise Consulting" width="571" height="160" loading="lazy"></li>
+      <li class="mitra-kartu"><img src="aset/mitra/aliring.png" alt="Aliring Studio" width="418" height="160" loading="lazy"></li>
+      <li class="mitra-kartu mitra-gelap"><img src="aset/mitra/reload-coms.png" alt="Reload COMS" width="844" height="156" loading="lazy"></li>
+      <li class="mitra-kartu mitra-rt"><img src="aset/mitra/rt11.svg" alt="" width="64" height="64" loading="lazy"><span>RT 11<small>Puri Bintaro Hijau</small></span></li>
+      <li class="mitra-kartu mitra-tinggi"><img src="aset/mitra/adhi-dwi-karya.png" alt="PT. Adhi Dwi Karya" width="348" height="200" loading="lazy"></li>
+    </ul>
   </div>
 </section>
 
-<!-- ============ LAYANAN ============ -->
+<!-- ============ LAYANAN: MAP FOLDER ============ -->
 <section id="layanan" class="bagian">
   <div class="wadah">
     <p class="label">Layanan</p>
     <h2>Dua hal yang kami kerjakan, dan kami kerjakan dengan serius.</h2>
-    <div class="bento">
-      <article class="layanan layanan-medsos muncul">
-        <span class="layanan-nomor">01</span>
-        <h3>Konten Media Sosial</h3>
-        <p>Konten Instagram yang berhenti di-<em>scroll</em>: cerita, humor, dan tokoh animasi yang membuat orang menonton sampai habis, lalu ingat nama usaha Anda.</p>
-        <ul class="centang">
-          <li>Reel animasi sampai 60 detik, dengan musik &amp; efek suara</li>
-          <li>Feed &amp; carousel berilustrasi</li>
-          <li>Story interaktif: polling, kuis, tanya-jawab</li>
-          <li>Caption dan tagar yang siap unggah</li>
-          <li>Rencana konten bulanan &amp; laporan performa</li>
-        </ul>
-        <p class="catatan-kotak">Setiap konten diperiksa sebelum dikirim. Untuk topik keuangan dan pajak, kami hanya memakai informasi yang pasti benar, tanpa angka atau aturan yang bisa berubah.</p>
+    <p class="catatan-tangan">buka mapnya ↓</p>
+
+    <div class="map" data-tab-grup>
+      <div class="map-tab" role="tablist" aria-label="Pilih layanan">
+        <button role="tab" aria-selected="true" aria-controls="map-medsos" id="tab-map-medsos" class="map-tab-medsos"><span>01</span>Konten Media Sosial</button>
+        <button role="tab" aria-selected="false" aria-controls="map-aplikasi" id="tab-map-aplikasi" class="map-tab-aplikasi"><span>02</span>Website &amp; Aplikasi</button>
+      </div>
+
+      <article id="map-medsos" class="map-isi map-medsos" role="tabpanel" aria-labelledby="tab-map-medsos">
+        <div class="map-teks">
+          <h3>Konten Media Sosial</h3>
+          <p>Konten Instagram yang berhenti di-<em>scroll</em>: cerita, humor, dan tokoh animasi yang membuat orang menonton sampai habis, lalu ingat nama usaha Anda.</p>
+          <ul class="centang">
+            <li>Reel animasi sampai 60 detik, dengan musik &amp; efek suara</li>
+            <li>Feed &amp; carousel berilustrasi</li>
+            <li>Story interaktif: polling, kuis, tanya-jawab</li>
+            <li>Caption dan tagar yang siap unggah</li>
+            <li>Rencana konten bulanan &amp; laporan performa</li>
+          </ul>
+          <p class="catatan-kotak">Setiap konten diperiksa sebelum dikirim. Untuk topik keuangan dan pajak, kami hanya memakai informasi yang pasti benar, tanpa angka atau aturan yang bisa berubah.</p>
+        </div>
+        <figure class="map-visual">
+          <div class="ponsel ponsel-kecil">
+            <video data-putar-otomatis muted loop playsinline preload="none" poster="aset/karya/reel-hari-05.jpg" src="aset/karya/reel-hari-05.mp4" aria-label="Cuplikan reel animasi: Notanya di mana?!"></video>
+          </div>
+          <figcaption class="tulisan">contoh reel, tanpa syuting</figcaption>
+        </figure>
       </article>
-      <figure class="ubin ubin-reel muncul">
-        <video data-putar-otomatis muted loop playsinline preload="none" poster="aset/karya/reel-hari-05.jpg" src="aset/karya/reel-hari-05.mp4" aria-label="Cuplikan reel animasi: Notanya di mana?!"></video>
-        <figcaption><span>Contoh reel</span>Tanpa syuting, tanpa tampil di kamera</figcaption>
-      </figure>
-      <figure class="ubin ubin-layar muncul">
-        <img loading="lazy" src="aset/karya/aliring-member.webp" alt="Aliring: beranda member di HP, sisa kuota paket">
-        <figcaption><span>Contoh aplikasi</span>Beranda member Aliring di HP</figcaption>
-      </figure>
-      <article class="layanan layanan-aplikasi muncul">
-        <span class="layanan-nomor">02</span>
-        <h3>Website &amp; Aplikasi Bisnis</h3>
-        <p>Dari website profil usaha sampai sistem yang mengurus pekerjaan harian: pemesanan, absensi, gaji, tagihan, dan laporan, dalam satu tempat.</p>
-        <ul class="centang">
-          <li>Website profil usaha &amp; halaman promosi</li>
-          <li>Aplikasi bisnis sesuai cara kerja usaha Anda</li>
-          <li>Notifikasi WhatsApp &amp; e-mail otomatis</li>
-          <li>Bisa dipasang di HP seperti aplikasi biasa</li>
-          <li>Server, keamanan, dan cadangan data kami urus</li>
-        </ul>
-        <p class="catatan-kotak">Dibangun dengan ribuan pengujian otomatis, supaya angka uang dan data Anda tidak meleset.</p>
+
+      <article id="map-aplikasi" class="map-isi map-aplikasi" role="tabpanel" aria-labelledby="tab-map-aplikasi" hidden>
+        <div class="map-teks">
+          <h3>Website &amp; Aplikasi Bisnis</h3>
+          <p>Dari website profil usaha sampai sistem yang mengurus pekerjaan harian: pemesanan, absensi, gaji, tagihan, dan laporan, dalam satu tempat.</p>
+          <ul class="centang">
+            <li>Website profil usaha &amp; halaman promosi</li>
+            <li>Aplikasi bisnis sesuai cara kerja usaha Anda</li>
+            <li>Notifikasi WhatsApp &amp; e-mail otomatis</li>
+            <li>Bisa dipasang di HP seperti aplikasi biasa</li>
+            <li>Server, keamanan, dan cadangan data kami urus</li>
+          </ul>
+          <p class="catatan-kotak">Dibangun dengan ribuan pengujian otomatis, supaya angka uang dan data Anda tidak meleset.</p>
+        </div>
+        <figure class="map-visual">
+          <img class="layar-tempel" loading="lazy" src="aset/karya/aliring-member.webp" alt="Aliring: beranda member di HP, sisa kuota paket">
+          <figcaption class="tulisan">aplikasi Aliring, dipakai tiap hari</figcaption>
+        </figure>
       </article>
     </div>
   </div>
 </section>
 
 <!-- ============ KARYA: MEDIA SOSIAL ============ -->
-<section id="karya" class="bagian bagian-gelap">
+<section id="karya" class="bagian bagian-biru">
   <div class="wadah">
     <p class="label">Karya · Media Sosial</p>
     <div class="judul-studi muncul">
@@ -223,35 +238,38 @@
   <div class="wadah">
     <p class="label">Karya · Website &amp; Aplikasi</p>
     <h2 class="judul-bagian-karya">Dari halaman toko sampai sistem kerja harian.</h2>
-    <div class="judul-studi muncul">
-      <div>
-        <h3 class="judul-proyek">Aliring Studio Yoga</h3>
-        <p class="sub">Aplikasi pengelola studio · Samarinda</p>
-        <p class="status-baris"><span class="status status-uji">Uji coba di studio</span></p>
+
+    <div class="lembar-besar muncul">
+      <div class="judul-studi">
+        <div>
+          <h3 class="judul-proyek">Aliring Studio Yoga</h3>
+          <p class="sub">Aplikasi pengelola studio · Samarinda</p>
+          <p class="status-baris"><span class="status status-uji">Uji coba di studio</span></p>
+        </div>
+        <p class="studi-ringkas">Satu aplikasi untuk seluruh urusan studio: member dan paket, jadwal dan pemesanan kelas, check-in mandiri di layar kios, absensi dan honor coach, slip gaji termasuk PPh 21, tagihan, notifikasi WhatsApp, sampai laporan pemilik. Sudah dipakai studionya dengan data sungguhan.</p>
       </div>
-      <p class="studi-ringkas">Satu aplikasi untuk seluruh urusan studio: member dan paket, jadwal dan pemesanan kelas, check-in mandiri di layar kios, absensi dan honor coach, slip gaji termasuk PPh 21, tagihan, notifikasi WhatsApp, sampai laporan pemilik. Sudah dipakai studionya dengan data sungguhan.</p>
+      <div class="galeri-aplikasi">
+        <figure class="layar-lebar">
+          <img loading="lazy" src="aset/karya/aliring-jadwal.webp" alt="Aliring: jadwal kelas mingguan di layar komputer pemilik">
+          <figcaption>Jadwal kelas mingguan, tampilan pemilik</figcaption>
+        </figure>
+        <figure class="layar-hp">
+          <img loading="lazy" src="aset/karya/aliring-member.webp" alt="Aliring: beranda member di HP, sisa kuota paket">
+          <figcaption>Beranda member di HP</figcaption>
+        </figure>
+        <figure class="layar-hp">
+          <img loading="lazy" src="aset/karya/aliring-checkin.webp" alt="Aliring: check-in peserta kelas di meja depan">
+          <figcaption>Check-in di meja depan</figcaption>
+        </figure>
+      </div>
+      <ul class="fakta-aplikasi">
+        <li><strong>7 peran</strong> pemilik, admin, meja depan, staf, coach, member, kios</li>
+        <li><strong>Ribuan</strong> pengujian otomatis setiap ada perubahan</li>
+        <li><strong>Harian</strong> cadangan data terenkripsi</li>
+        <li><strong>HTTPS</strong> server sendiri, dilindungi Cloudflare</li>
+      </ul>
+      <p class="data-contoh">Nama dan nomor pada gambar adalah data contoh.</p>
     </div>
-    <div class="galeri-aplikasi muncul">
-      <figure class="layar-lebar">
-        <img loading="lazy" src="aset/karya/aliring-jadwal.webp" alt="Aliring: jadwal kelas mingguan di layar komputer pemilik">
-        <figcaption>Jadwal kelas mingguan, tampilan pemilik</figcaption>
-      </figure>
-      <figure class="layar-hp">
-        <img loading="lazy" src="aset/karya/aliring-member.webp" alt="Aliring: beranda member di HP, sisa kuota paket">
-        <figcaption>Beranda member di HP</figcaption>
-      </figure>
-      <figure class="layar-hp">
-        <img loading="lazy" src="aset/karya/aliring-checkin.webp" alt="Aliring: check-in peserta kelas di meja depan">
-        <figcaption>Check-in di meja depan</figcaption>
-      </figure>
-    </div>
-    <ul class="fakta-aplikasi muncul">
-      <li><strong>7 peran</strong> pemilik, admin, meja depan, staf, coach, member, kios</li>
-      <li><strong>Ribuan</strong> pengujian otomatis setiap ada perubahan</li>
-      <li><strong>Harian</strong> cadangan data terenkripsi</li>
-      <li><strong>HTTPS</strong> server sendiri, dilindungi Cloudflare</li>
-    </ul>
-    <p class="data-contoh">Nama dan nomor pada gambar adalah data contoh.</p>
 
     <div class="proyek-baris">
       <article class="proyek muncul">
@@ -330,7 +348,7 @@
     <div class="tentang-teks">
       <p>ADK Corp adalah tim kecil dengan dua keahlian: membuat konten media sosial yang ditonton, dan membangun website serta aplikasi yang dipakai setiap hari. Kami melayani usaha dari kota mana pun di Indonesia, semuanya dari jarak jauh.</p>
       <p>Kami tahu kami pendatang baru, jadi harga kami jujur dan sengaja di bawah agensi besar. Yang tidak kami kurangi adalah amanah:</p>
-      <ul class="janji muncul">
+      <ul class="janji">
         <li><strong>Penawaran tertulis</strong>Isi, jadwal, dan harga disepakati sebelum pekerjaan dimulai.</li>
         <li><strong>Tenggat ditepati</strong>Jadwal kirim yang sudah disepakati kami pegang.</li>
         <li><strong>Diperiksa dulu</strong>Setiap hasil diperiksa sebelum sampai ke Anda.</li>
@@ -354,6 +372,7 @@
       <span class="kuota"><span class="kuota-batang"><span class="kuota-isi"></span></span><span class="kuota-teks"></span></span>
     </div>
 
+    <div data-tab-grup>
     <div class="tab" role="tablist" aria-label="Pilih jenis layanan">
       <button role="tab" aria-selected="true" aria-controls="harga-medsos" id="tab-medsos">Media Sosial</button>
       <button role="tab" aria-selected="false" aria-controls="harga-aplikasi" id="tab-aplikasi">Website &amp; Aplikasi</button>
@@ -361,7 +380,7 @@
 
     <div id="harga-medsos" role="tabpanel" aria-labelledby="tab-medsos">
       <div class="paket-baris">
-        <article class="paket muncul">
+        <article class="paket">
           <h3>Coba</h3>
           <p class="paket-untuk">2 minggu untuk melihat hasil kami dulu. Sekali per klien.</p>
           <p class="paket-mulai">sekali bayar</p>
@@ -374,7 +393,7 @@
           </ul>
           <a class="tombol tombol-garis" data-wa="Halo ADK Corp, saya mau ambil paket Coba 2 minggu." href="#">Ambil paket ini</a>
         </article>
-        <article class="paket muncul">
+        <article class="paket">
           <h3>Dasar</h3>
           <p class="paket-untuk">Akun yang mulai rutin tampil setiap minggu.</p>
           <p class="paket-mulai">per bulan <span class="label-promo">Promo −25%</span></p>
@@ -388,7 +407,7 @@
           </ul>
           <a class="tombol tombol-garis" data-wa="Halo ADK Corp, saya tertarik paket Dasar dengan promo Klien Perintis." href="#">Ambil paket ini</a>
         </article>
-        <article class="paket paket-unggul muncul">
+        <article class="paket paket-unggul">
           <span class="paket-pita">Rekomendasi kami</span>
           <h3>Tumbuh</h3>
           <p class="paket-untuk">Usaha yang ingin pengikut dan jangkauannya naik.</p>
@@ -404,7 +423,7 @@
           </ul>
           <a class="tombol" data-wa="Halo ADK Corp, saya tertarik paket Tumbuh dengan promo Klien Perintis." href="#">Ambil paket ini</a>
         </article>
-        <article class="paket muncul">
+        <article class="paket">
           <h3>Penuh</h3>
           <p class="paket-untuk">Akun dikelola penuh, Anda tinggal fokus jualan.</p>
           <p class="paket-mulai">per bulan <span class="label-promo">Promo −25%</span></p>
@@ -456,7 +475,7 @@
 
     <div id="harga-aplikasi" role="tabpanel" aria-labelledby="tab-aplikasi" hidden>
       <div class="paket-baris panel-aplikasi">
-        <article class="paket muncul">
+        <article class="paket">
           <h3>Website Profil</h3>
           <p class="paket-untuk">Usaha yang perlu tampil rapi dan mudah dihubungi di internet.</p>
           <p class="paket-mulai">mulai dari <span class="label-promo">Promo</span></p>
@@ -472,7 +491,7 @@
           </ul>
           <a class="tombol tombol-garis" data-wa="Halo ADK Corp, saya tertarik paket Website Profil dengan promo Klien Perintis." href="#">Tanya paket ini</a>
         </article>
-        <article class="paket paket-unggul muncul">
+        <article class="paket paket-unggul">
           <span class="paket-pita">Rekomendasi kami</span>
           <h3>Website + Fitur</h3>
           <p class="paket-untuk">Website yang juga bekerja: jualan, pemesanan, atau area member.</p>
@@ -489,7 +508,7 @@
           </ul>
           <a class="tombol" data-wa="Halo ADK Corp, saya tertarik paket Website + Fitur dengan promo Klien Perintis." href="#">Tanya paket ini</a>
         </article>
-        <article class="paket muncul">
+        <article class="paket">
           <h3>Aplikasi Bisnis</h3>
           <p class="paket-untuk">Sistem khusus untuk cara kerja usaha Anda, dipakai tim setiap hari.</p>
           <p class="paket-mulai">mulai dari <span class="label-promo">Promo</span></p>
@@ -541,6 +560,7 @@
         <li><strong>Jadwal mulai</strong>Perkiraan tanggal mulai kami sampaikan sebelum DP. Kami tidak menerima DP kalau belum sanggup mulai.</li>
         <li><strong>Pemeliharaan</strong>Dibayar di muka, bisa berhenti setelah masa minimal.</li>
       </ul>
+    </div>
     </div>
   </div>
 </section>
@@ -615,6 +635,8 @@
 
 <!-- ============ AJAKAN ============ -->
 <section class="ajakan">
+  <span class="ajakan-stiker s1" aria-hidden="true">gratis<br>ngobrol</span>
+  <span class="ajakan-stiker s2" aria-hidden="true">✺</span>
   <div class="wadah ajakan-isi">
     <h2>Punya usaha yang ingin lebih dikenal, atau lebih rapi?</h2>
     <p>Ceritakan saja dulu. Kami bantu hitung yang paling pas untuk anggaran Anda.</p>
@@ -654,6 +676,6 @@
   <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.6-.5-1-1.1-1.4-1.8-.1-.2 0-.4.1-.5l.4-.5.3-.5v-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.6.6-.9 1.4-.9 2.2.1 1 .5 1.9 1 2.7 1.1 1.6 2.5 2.9 4.2 3.6.5.2.9.4 1.4.5.5.2 1 .2 1.5.1.6-.1 1.2-.5 1.5-1 .2-.4.2-.8.1-1.2l-.5-.3Z"/></svg>
 </a>
 
-<script src="halaman.js?v=20261016"></script>
+<script src="halaman.js?v=20261016t"></script>
 </body>
 </html>

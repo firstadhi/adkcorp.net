@@ -17,25 +17,55 @@ document.querySelectorAll("[data-wa]").forEach((a) => {
   });
 });
 
-// Tab harga: Media Sosial / Website & Aplikasi
-const tab = [...document.querySelectorAll('[role="tab"]')];
-function pilihTab(t) {
-  tab.forEach((b) => {
-    const aktif = b === t;
-    b.setAttribute("aria-selected", aktif);
-    b.tabIndex = aktif ? 0 : -1;
-    document.getElementById(b.getAttribute("aria-controls")).hidden = !aktif;
-  });
-}
-tab.forEach((b, i) => {
-  b.addEventListener("click", () => pilihTab(b));
-  b.addEventListener("keydown", (e) => {
-    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
-    const lain = tab[(i + (e.key === "ArrowRight" ? 1 : tab.length - 1)) % tab.length];
-    pilihTab(lain);
-    lain.focus();
+// Tab: map layanan dan tab harga. Setiap [data-tab-grup] berdiri sendiri.
+document.querySelectorAll("[data-tab-grup]").forEach((grup) => {
+  const tab = [...grup.querySelector('[role="tablist"]').querySelectorAll('[role="tab"]')];
+  function pilihTab(t) {
+    tab.forEach((b) => {
+      const aktif = b === t;
+      b.setAttribute("aria-selected", aktif);
+      b.tabIndex = aktif ? 0 : -1;
+      document.getElementById(b.getAttribute("aria-controls")).hidden = !aktif;
+    });
+  }
+  tab.forEach((b, i) => {
+    b.tabIndex = b.getAttribute("aria-selected") === "true" ? 0 : -1;
+    b.addEventListener("click", () => pilihTab(b));
+    b.addEventListener("keydown", (e) => {
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      const lain = tab[(i + (e.key === "ArrowRight" ? 1 : tab.length - 1)) % tab.length];
+      pilihTab(lain);
+      lain.focus();
+    });
   });
 });
+
+// Stiker & polaroid di pembuka bisa digeser dengan mouse. Di layar sentuh tidak diaktifkan,
+// supaya jari yang menggulir halaman tidak malah menyeret stiker.
+if (window.matchMedia("(pointer: fine)").matches) {
+  let z = 10;
+  document.querySelectorAll(".stiker-geser").forEach((el) => {
+    let awalX, awalY, dx = 0, dy = 0;
+    el.addEventListener("pointerdown", (e) => {
+      if (e.button !== 0) return;
+      e.preventDefault();
+      el.setPointerCapture(e.pointerId);
+      awalX = e.clientX - dx;
+      awalY = e.clientY - dy;
+      el.style.zIndex = ++z;
+      el.classList.add("diseret");
+    });
+    el.addEventListener("pointermove", (e) => {
+      if (!el.hasPointerCapture(e.pointerId)) return;
+      dx = e.clientX - awalX;
+      dy = e.clientY - awalY;
+      el.style.translate = `${dx}px ${dy}px`;
+    });
+    const lepas = () => el.classList.remove("diseret");
+    el.addEventListener("pointerup", lepas);
+    el.addEventListener("pointercancel", lepas);
+  });
+}
 
 // Hanya satu reel yang berbunyi pada satu waktu
 const video = document.querySelectorAll(".reel video");
