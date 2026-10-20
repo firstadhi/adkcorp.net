@@ -359,6 +359,35 @@ em { font-style: normal; color: var(--api); }
 .tautan-proyek:hover { background: var(--kuning); }
 .proyek .data-contoh { margin-top: 12px; }
 
+/* ---------- karya desain kartu: depan menumpuk di atas belakang ---------- */
+.galeri-kartu { display: flex; flex-wrap: wrap; justify-content: center; gap: 56px 40px; }
+.kartu-pasang { margin: 0; width: calc((100% - 80px) / 3); }
+.kartu-tumpuk { position: relative; padding: 0 0 12% 12%; }
+.kartu-tumpuk img, .kartu-emoney img {
+  width: 100%; border-radius: 12px; border: 2px solid var(--tinta); background: var(--putih);
+  box-shadow: 5px 5px 0 rgba(22, 20, 18, .85); transition: rotate .25s, translate .25s;
+}
+.kartu-belakang { position: absolute; left: 0; bottom: 0; width: 88% !important; rotate: -5deg; }
+.kartu-depan { position: relative; width: 88% !important; margin-left: auto; rotate: 3deg; }
+.kartu-pasang:hover .kartu-belakang { rotate: -8deg; translate: -6px 8px; }
+.kartu-pasang:hover .kartu-depan { rotate: 5deg; translate: 6px -10px; }
+.kartu-emoney { position: relative; width: calc((100% - 80px) / 3 * .9); padding-top: 4px; }
+.kartu-emoney img { rotate: -2.5deg; border-radius: 14px; }
+.kartu-emoney + .kartu-emoney img { rotate: 2deg; }
+.kartu-emoney:hover img { rotate: 0deg; }
+.kartu-emoney::before {
+  content: ""; position: absolute; top: -10px; left: 50%; width: 84px; height: 24px; margin-left: -42px; z-index: 2;
+  background: rgba(255, 216, 74, .78); border-left: 2px dashed rgba(22, 20, 18, .18); border-right: 2px dashed rgba(22, 20, 18, .18);
+  rotate: -4deg;
+}
+.kartu-pasang figcaption { margin-top: 16px; font-family: var(--huruf-tangan); font-weight: 700; font-size: 26px; line-height: 1.1; text-align: center; }
+.kartu-pasang figcaption small {
+  display: block; margin-top: 4px; font-family: var(--huruf-mono); font-weight: 500; font-size: 12px;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--abu);
+}
+#kartu .data-contoh { text-align: center; margin-top: 36px; }
+.panel-kartu .paket li::before { color: var(--hijau); }
+
 /* ---------- tentang: catatan tempel ---------- */
 #tentang { padding-top: 40px; }
 .tentang-isi { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start; }
@@ -600,6 +629,7 @@ details p { margin: 0; padding: 0 22px 20px; color: var(--tinta-2); }
   .langkah li::after { display: none; }
   .bawah-isi { grid-template-columns: 1fr; gap: 28px; align-items: start; }
   .galeri-feed, .galeri-fase2 { grid-template-columns: repeat(2, 1fr); }
+  .kartu-pasang, .kartu-emoney { width: calc((100% - 40px) / 2); }
   .segera { flex-direction: column; align-items: flex-start; padding: 24px; }
 }
 
@@ -638,7 +668,7 @@ details p { margin: 0; padding: 0 22px 20px; color: var(--tinta-2); }
   .tentang-teks .tentang-penutup { font-size: 28px; }
   .langkah { grid-template-columns: 1fr; }
   .tab { display: flex; }
-  .tab button { flex: 1; padding: 10px 10px; font-size: 15px; }
+  .tab button { flex: 1; padding: 10px 6px; font-size: 14px; line-height: 1.2; }
   .tombol-besar { font-size: 17px; padding: 16px 22px; }
   .ajakan { padding: 120px 0 90px; }
   .ajakan-stiker.s1 { width: 96px; height: 96px; font-size: 21px; left: 12px; top: 18px; }
@@ -654,6 +684,15 @@ details p { margin: 0; padding: 0 22px 20px; color: var(--tinta-2); }
   .baris-reel::-webkit-scrollbar, .galeri-feed::-webkit-scrollbar, .galeri-fase2::-webkit-scrollbar,
   .proyek-baris::-webkit-scrollbar, .paket-baris::-webkit-scrollbar { display: none; }
   .baris-reel > *, .galeri-feed > *, .galeri-fase2 > *, .proyek-baris > *, .paket-baris > * { scroll-snap-align: start; }
+  .galeri-kartu {
+    display: grid; grid-auto-flow: column; grid-auto-columns: 82%; gap: 26px; justify-content: start;
+    overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none;
+    margin: 0 -16px; padding: 16px 16px 10px 18px;
+  }
+  .galeri-kartu::-webkit-scrollbar { display: none; }
+  .galeri-kartu > * { scroll-snap-align: start; width: auto; }
+  .kartu-pasang figcaption { font-size: 23px; }
+  #kartu .data-contoh { margin-top: 20px; }
   .baris-reel { grid-auto-columns: 70%; gap: 18px; margin-bottom: 0; padding-top: 6px; padding-bottom: 24px; }
   .galeri-feed, .galeri-fase2 { grid-auto-columns: 62%; gap: 16px; padding: 8px 16px 18px 4px; margin-left: -4px; }
   .proyek-baris { grid-auto-columns: 86%; max-width: none; gap: 18px; margin-top: 44px; padding: 6px 16px 18px 4px; margin-left: -4px; }
