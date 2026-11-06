@@ -40,33 +40,6 @@ document.querySelectorAll("[data-tab-grup]").forEach((grup) => {
   });
 });
 
-// Stiker & polaroid di pembuka bisa digeser dengan mouse. Di layar sentuh tidak diaktifkan,
-// supaya jari yang menggulir halaman tidak malah menyeret stiker.
-if (window.matchMedia("(pointer: fine)").matches) {
-  let z = 10;
-  document.querySelectorAll(".stiker-geser").forEach((el) => {
-    let awalX, awalY, dx = 0, dy = 0;
-    el.addEventListener("pointerdown", (e) => {
-      if (e.button !== 0) return;
-      e.preventDefault();
-      el.setPointerCapture(e.pointerId);
-      awalX = e.clientX - dx;
-      awalY = e.clientY - dy;
-      el.style.zIndex = ++z;
-      el.classList.add("diseret");
-    });
-    el.addEventListener("pointermove", (e) => {
-      if (!el.hasPointerCapture(e.pointerId)) return;
-      dx = e.clientX - awalX;
-      dy = e.clientY - awalY;
-      el.style.translate = `${dx}px ${dy}px`;
-    });
-    const lepas = () => el.classList.remove("diseret");
-    el.addEventListener("pointerup", lepas);
-    el.addEventListener("pointercancel", lepas);
-  });
-}
-
 // Hanya satu reel yang berbunyi pada satu waktu
 const video = document.querySelectorAll(".reel video");
 video.forEach((v) =>
@@ -110,5 +83,36 @@ if (keAtas) {
   keAtas.addEventListener("click", () => {
     const halus = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     window.scrollTo({ top: 0, behavior: halus ? "smooth" : "auto" });
+  });
+}
+
+// Kartu: kilau mengikuti kursor dan miring 3D ke arah kursor. Tombol utama "tertarik" ke kursor.
+// Hanya untuk mouse, dan tidak untuk pengunjung yang memilih kurangi gerakan.
+if (window.matchMedia("(pointer: fine)").matches && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  document.querySelectorAll(".ubin, .layanan-kartu, .paket, .proyek, .langkah li, .janji li, .kartu-pasang").forEach((el) => {
+    const miring = !el.matches(".proyek"); // kartu proyek bertumpuk, cukup kilau saja
+    el.addEventListener("pointermove", (e) => {
+      const r = el.getBoundingClientRect();
+      const x = e.clientX - r.left, y = e.clientY - r.top;
+      el.style.setProperty("--mx", `${x}px`);
+      el.style.setProperty("--my", `${y}px`);
+      if (miring) {
+        const nx = x / r.width - 0.5, ny = y / r.height - 0.5;
+        el.style.rotate = `${-ny} ${nx} 0 ${Math.hypot(nx, ny) * 14}deg`;
+      }
+    });
+    el.addEventListener("pointerleave", () => { el.style.rotate = ""; });
+  });
+  const latar = document.querySelector(".latar-hidup");
+  if (latar) window.addEventListener("pointermove", (e) => {
+    latar.style.setProperty("--kx", `${e.clientX}px`);
+    latar.style.setProperty("--ky", `${e.clientY}px`);
+  }, { passive: true });
+  document.querySelectorAll(".pembuka .tombol, .ajakan .tombol, .atas .tombol").forEach((el) => {
+    el.addEventListener("pointermove", (e) => {
+      const r = el.getBoundingClientRect();
+      el.style.translate = `${(e.clientX - r.left - r.width / 2) * 0.25}px ${(e.clientY - r.top - r.height / 2) * 0.35}px`;
+    });
+    el.addEventListener("pointerleave", () => { el.style.translate = ""; });
   });
 }
