@@ -46,19 +46,6 @@ video.forEach((v) =>
   v.addEventListener("play", () => video.forEach((lain) => lain !== v && lain.pause()))
 );
 
-// Kuota promo 20 klien pertama — ubah angka TERPAKAI setiap ada klien baru yang memakai promo
-const KUOTA_PROMO = 20;
-const TERPAKAI = 0;
-document.querySelectorAll("[data-kuota]").forEach((el) => {
-  const sisa = Math.max(KUOTA_PROMO - TERPAKAI, 0);
-  el.querySelector(".kuota-teks").textContent = `Sisa ${sisa} dari ${KUOTA_PROMO} klien`;
-  el.querySelector(".kuota-isi").style.width = `${(sisa / KUOTA_PROMO) * 100}%`;
-});
-document.querySelectorAll("[data-kuota-sisa]").forEach((el) => {
-  const sisa = Math.max(KUOTA_PROMO - TERPAKAI, 0);
-  el.textContent = sisa > 0 ? `sisa ${sisa} dari ${KUOTA_PROMO} klien` : "kuota sudah habis";
-});
-
 // Video bertanda data-putar-otomatis (tanpa suara) hanya diputar saat terlihat di layar, supaya hemat kuota
 // data. Pengunjung yang memilih kurangi gerakan hanya melihat gambar sampulnya.
 const putarOtomatis = document.querySelectorAll("video[data-putar-otomatis]");
